@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Tidying Up The Room
+  productName: Test
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -142,7 +142,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -2860334983000586583, guid: 77f8b19078debf043a267c7bfee9304e, type: 2}
+  - {fileID: 11400000, guid: d8704fdbf6923eb419212646bef7f771, type: 2}
+  - {fileID: -3905948329719026674, guid: bb787d3782d67d24bb8249ff7cdc3977, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -163,7 +166,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.TidyingUpTheRoom
+    Android: com.DefaultCompany.Test
   buildNumber:
     Standalone: 0
     VisionOS: 0
