@@ -212,4 +212,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215e53c2766c47a4089c8be89d194f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nabe: {fileID: 0}
+  Nabe: {fileID: 7145643260960862261, guid: 1d6d2e6ad5df6054da2716ced0da7e9f, type: 3}
