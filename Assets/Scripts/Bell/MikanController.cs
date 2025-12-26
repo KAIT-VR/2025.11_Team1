@@ -24,9 +24,9 @@ public class MikanController : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(SE_explosion, transform.position);
         
-        VisualEffect newVisualEffect = Instantiate(VFX_explosion);//Destroyすると効果音止まるので同じ座標にオブジェクト生成
-        newVisualEffect.transform.position = this.transform.position;
-        newVisualEffect.SendEvent("OnPlay");//OffPlayしなくてもDestroyするしいいかな
+        VisualEffect newVisualEffect = Instantiate(VFX_explosion);//Destroyすると効果音止まるので音用オブジェクト生成
+        newVisualEffect.transform.position = this.transform.position; //同じ座標になるようににワープ
+        newVisualEffect.SendEvent("OnPlay");//OffPlayは書かなくてもどうせDestroyするしいいかな
         Destroy(newVisualEffect.gameObject, 5.0f);//んで5秒後にDestroy
 
         Vector3 center = transform.position;
