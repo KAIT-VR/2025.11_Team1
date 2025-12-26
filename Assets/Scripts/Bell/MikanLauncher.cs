@@ -12,6 +12,8 @@ public class MikanLauncher : MonoBehaviour
     [SerializeField] GameObject mikanPrefab;
     [SerializeField] Transform muzzle;
 
+    [Header("Mikan Config")]
+    [SerializeField] float mikanSize = 1.5f;
     [SerializeField] float mikanSpeed = 15f;
 
      bool fired = false;
@@ -35,6 +37,7 @@ public class MikanLauncher : MonoBehaviour
             muzzle.position,
             muzzle.rotation
             );
+        mikan.transform.localScale = new Vector3(mikanSize, mikanSize, mikanSize); // 1.5Ф{В…КgСе
 
         Rigidbody rb = mikan.GetComponent<Rigidbody>();
         rb.velocity = muzzle.forward * mikanSpeed;
