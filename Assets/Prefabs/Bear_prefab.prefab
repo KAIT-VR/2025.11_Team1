@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215e53c2766c47a4089c8be89d194f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nabe: {fileID: 8351180533291967088, guid: 1d6d2e6ad5df6054da2716ced0da7e9f, type: 3}
+  Nabe: {fileID: 9043005688351343289, guid: c3279149cdc2c984c833139713709da9, type: 3}
 --- !u!195 &1961684932247876500
 NavMeshAgent:
   m_ObjectHideFlags: 0
