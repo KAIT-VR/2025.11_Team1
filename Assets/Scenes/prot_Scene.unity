@@ -9097,8 +9097,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 689694944101057987, guid: c3279149cdc2c984c833139713709da9, type: 3}
       insertIndex: 0
       addedObject: {fileID: 265933257}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9043005688351343289, guid: c3279149cdc2c984c833139713709da9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2313353960524440136}
   m_SourcePrefab: {fileID: 100100000, guid: c3279149cdc2c984c833139713709da9, type: 3}
+--- !u!1 &2313353960524440135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9043005688351343289, guid: c3279149cdc2c984c833139713709da9, type: 3}
+  m_PrefabInstance: {fileID: 2313353960524440134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2313353960524440136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2313353960524440135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7508f79353113df498bdc0095e8dac2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nabeName: "\u934B"
+  maxHp: 100
+  currentHp: 0
+  hpSlider: {fileID: 0}
+  smokeEffect: {fileID: 0}
 --- !u!1001 &4055141011314158627
 PrefabInstance:
   m_ObjectHideFlags: 0
