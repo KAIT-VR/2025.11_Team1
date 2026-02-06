@@ -21,6 +21,12 @@ public class BearController : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (target != null){
+            
+        }
+    }
     public void TakeDamage(float damage)
     {
         hp -= damage;
