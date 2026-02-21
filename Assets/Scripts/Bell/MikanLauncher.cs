@@ -15,8 +15,10 @@ public class MikanLauncher : MonoBehaviour
     [Header("Mikan Config")]
     [SerializeField] float mikanSize = 1.5f;
     [SerializeField] float mikanSpeed = 15f;
+    [SerializeField] float firerate = 0.7f;
 
-     bool fired = false;
+    bool fired = false;
+    float firetime = 0f;
 
     private void OnEnable()
     {
@@ -45,12 +47,14 @@ public class MikanLauncher : MonoBehaviour
 
     void Update()
     {
+        firetime += Time.deltaTime;
         float triggerValue = rightTrigger.action.ReadValue<float>();
 
-        if (triggerValue > 0.8f && !fired)//右トリガーの入力が0.8以上だったら
+        if (triggerValue > 0.8f && !fired && firetime >= firerate)//右トリガーの入力が0.8以上,かつトリガー戻し完了,かつ理論レート以上の間隔
         {
             Fire();//発射
             fired = true;//多重発射防止のbool
+            firetime = 0f;
         }
         if (triggerValue < 0.3f)//トリガーが0.3未満まで戻ったら再発射可能
         {
