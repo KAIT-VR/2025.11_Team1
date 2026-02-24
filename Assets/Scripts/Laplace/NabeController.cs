@@ -42,7 +42,7 @@ public class NabeController : MonoBehaviour
             {
                 currentHp -= damagebyhit;
                 
-                Debug.Log("“ç‚ÌHP:" + currentHp);
+                //Debug.Log("“ç‚ÌHP:" + currentHp);
                 if (currentHp <= 0f)
                 {
                     BreakNabe();
