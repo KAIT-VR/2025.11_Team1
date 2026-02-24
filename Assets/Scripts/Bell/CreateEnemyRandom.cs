@@ -51,7 +51,7 @@ public class CreateEnemyRandom : MonoBehaviour
         }
         else
         {
-            Debug.LogError("NavMeshè„Ç…ê∂ê¨Ç≈Ç´Ç»Ç©Ç¡ÇΩÅI");
+            //Debug.LogError("NavMeshè„Ç…ê∂ê¨Ç≈Ç´Ç»Ç©Ç¡ÇΩÅI");
         }
         
         //Debug.Log("spawnpoint : " + spawnpoint);
