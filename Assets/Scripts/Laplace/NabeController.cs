@@ -6,64 +6,56 @@ public class NabeController : MonoBehaviour
     [Header("鍋のステータス")]
     public string nabeName = "鍋";
     public float maxHp = 100f;    
-    public float currentHp;        
+    public float currentHp;
+    public float damagebyhit = 5f;
+    public float cooldowntime = 1f;
+    [SerializeField] Collider damageArea;
 
     [Header("ビジュアル設定 (任意)")]
-    public Slider hpSlider;        
-    public ParticleSystem smokeEffect; 
+    public Slider hpSlider;
+    [SerializeField] private GameObject fill;
+    public ParticleSystem smokeEffect;
 
     void Start()
     {
         currentHp = maxHp;
         UpdateUI();
-        Debug.Log($"{nabeName} を装備しました！ HP: {currentHp}");
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (cooldowntime > 0f)
         {
-            Cook("激辛カレー");
+            cooldowntime -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        else
         {
-            Repair();
+            cooldowntime = 0f;
         }
     }
 
-    public void Cook(string menuName)
+    private void OnTriggerStay(Collider other)
     {
-        if (currentHp <= 0)
+        if (other.CompareTag("Enemy"))
         {
-            Debug.Log($"<color=red>{nabeName} は割れています！これ以上料理できません！</color>");
-            return;
+            if (cooldowntime <= 0f)
+            {
+                currentHp -= damagebyhit;
+                
+                Debug.Log("鍋のHP:" + currentHp);
+                if (currentHp <= 0f)
+                {
+                    BreakNabe();
+                }
+                UpdateUI();
+                cooldowntime = 1f;
+            }
         }
-
-        float damage = 20f;
-        currentHp -= damage;
-
-        Debug.Log($"{menuName} を調理中... (耐久度 -{damage})");
-
-        if (smokeEffect != null) smokeEffect.Play();
-
-        if (currentHp <= 0)
-        {
-            currentHp = 0;
-            BreakNabe();
-        }
-
-        UpdateUI();
-    }
-
-    public void Repair()
-    {
-        currentHp = maxHp;
-        Debug.Log($"<color=green>{nabeName} を修理しました！ピカピカです！</color>");
-        UpdateUI();
     }
 
     void BreakNabe()
     {
+        fill.GetComponent<Image>().enabled = false;
         Debug.Log("ガシャーン！鍋が壊れてしまいました...");
     }
 
