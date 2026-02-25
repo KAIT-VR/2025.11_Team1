@@ -4377,7 +4377,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1739174048}
+      - m_Target: {fileID: 1739174050}
         m_TargetAssemblyTypeName: ResultManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -9561,6 +9561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739174049}
   - component: {fileID: 1739174048}
+  - component: {fileID: 1739174050}
   m_Layer: 0
   m_Name: ResultManager
   m_TagString: Untagged
@@ -9599,6 +9600,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739174050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739174047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd883f940135054b9f169ca7c254c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 60
+  resultPanel: {fileID: 1325989479}
+  resultHpText: {fileID: 1553440606}
+  nabeController: {fileID: 2313353960524440136}
 --- !u!1001 &1739316740
 PrefabInstance:
   m_ObjectHideFlags: 0
