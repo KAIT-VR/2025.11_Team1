@@ -20,7 +20,7 @@ public class ResultManager : MonoBehaviour
     void Start()
     {
         currentTime = timeLimit;
-        resultPanel.SetActive(false);
+        //resultPanel.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -37,11 +37,12 @@ public class ResultManager : MonoBehaviour
         }
     }
 
-    void ShowResultScreen()
+    public void ShowResultScreen()
     {
         isGameOver = true;
         //Time.timeScale = 0f;
         resultPanel.SetActive(true);
+        nabeController.NabeStop();
 
         if (nabeController != null)
         {

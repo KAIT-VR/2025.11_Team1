@@ -16,10 +16,16 @@ public class NabeController : MonoBehaviour
     [SerializeField] private GameObject fill;
     public ParticleSystem smokeEffect;
 
+    [Header("他のスクリプトとの連携")]
+    [SerializeField] ResultManager resultManager;
+
+    bool isFinished = false;
+
     void Start()
     {
         currentHp = maxHp;
         UpdateUI();
+        
     }
 
     void Update()
@@ -36,19 +42,22 @@ public class NabeController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if(isFinished == false)
         {
-            if (cooldowntime <= 0f)
+            if (other.CompareTag("Enemy"))
             {
-                currentHp -= damagebyhit;
-                
-                //Debug.Log("鍋のHP:" + currentHp);
-                if (currentHp <= 0f)
+                if (cooldowntime <= 0f)
                 {
-                    BreakNabe();
+                    currentHp -= damagebyhit;
+
+                    //Debug.Log("鍋のHP:" + currentHp);
+                    if (currentHp <= 0f)
+                    {
+                        BreakNabe();
+                    }
+                    UpdateUI();
+                    cooldowntime = 1f;
                 }
-                UpdateUI();
-                cooldowntime = 1f;
             }
         }
     }
@@ -57,6 +66,13 @@ public class NabeController : MonoBehaviour
     {
         fill.GetComponent<Image>().enabled = false;
         Debug.Log("ガシャーン！鍋が壊れてしまいました...");
+        resultManager.ShowResultScreen();
+        this.gameObject.SetActive(false);
+    }
+
+    public void NabeStop()
+    {
+        isFinished = true;
     }
 
     void UpdateUI()
