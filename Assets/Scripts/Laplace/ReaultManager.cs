@@ -40,7 +40,7 @@ public class ResultManager : MonoBehaviour
     void ShowResultScreen()
     {
         isGameOver = true;
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         resultPanel.SetActive(true);
 
         if (nabeController != null)
