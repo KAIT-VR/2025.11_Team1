@@ -14,6 +14,13 @@ public class ResultManager : MonoBehaviour
     public GameObject resultPanel;
     public TMP_Text resultHpText;
 
+    [Header("Œø‰Ê‰¹")]
+    [SerializeField] AudioClip SE_successed;
+    [SerializeField] AudioClip SE_failed;
+    [SerializeField] GameObject Nabe;
+
+    AudioSource audioSource;
+
     [Header("‘¼‚ÌƒXƒNƒŠƒvƒg‚Æ‚Ì˜AŒg")]
     public NabeController nabeController;
 
@@ -22,6 +29,7 @@ public class ResultManager : MonoBehaviour
         currentTime = timeLimit;
         //resultPanel.SetActive(false);
         Time.timeScale = 1f;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -47,6 +55,20 @@ public class ResultManager : MonoBehaviour
         if (nabeController != null)
         {
             resultHpText.text = "“ç‚Ìc‚è‘Ì—Í: " + nabeController.currentHp.ToString("F0");
+        }
+
+        Vector3 Nabeposition; 
+        Nabeposition.x = Nabe.transform.position.x;
+        Nabeposition.y = Nabe.transform.position.y;
+        Nabeposition.z = Nabe.transform.position.z;
+
+        if(nabeController.currentHp > 0f)//–h‰q¬Œ÷ or ¸”sSE
+        {
+            AudioSource.PlayClipAtPoint(SE_successed, Nabeposition);
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(SE_failed, Nabeposition);
         }
     }
 
